@@ -1,0 +1,54 @@
+type UserData
+  @model
+  @auth(rules: [{ allow: public }, { allow: private, operations: [read] }]) {
+  userId: String! @primaryKey
+  score: Int!
+}
+
+type Price
+  @model
+  @auth(rules: [{ allow: public }, { allow: private, operations: [read] }]) {
+  code: String! @primaryKey
+  rate: Float!
+}
+
+type Guess
+  @model
+  @auth(
+    rules: [
+      { allow: public }
+      {
+        allow: owner
+        operations: [create, read]
+        provider: userPools
+        ownerField: "userId"
+      }
+    ]
+  ) {
+  userId: String!
+    @index(name: "byUser", sortKeyFields: ["createdAt"])
+    @auth(rules: [{ allow: owner, operations: [read] }])
+  code: String!
+    @index(name: "byCode", sortKeyFields: ["createdAt"])
+    @auth(rules: [{ allow: owner, operations: [read] }])
+  rate: Float! @auth(rules: [{ allow: owner, operations: [read] }])
+  createdAt: String! @auth(rules: [{ allow: owner, operations: [read] }])
+  choice: GuessChoice! @auth(rules: [{ allow: owner, operations: [read] }])
+}
+
+type GuessResult
+  @model
+  @auth(rules: [{ allow: public }, { allow: private, operations: [read] }]) {
+  guessId: String! @index(name: "byGuessId")
+  result: ResultType!
+}
+
+enum ResultType {
+  WIN
+  LOSE
+}
+
+enum GuessChoice {
+  UP
+  DOWN
+}

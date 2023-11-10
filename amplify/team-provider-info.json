@@ -1,0 +1,38 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-updown-dev-90815-authRole",
+      "UnauthRoleArn": "arn:aws:iam::223658774641:role/amplify-updown-dev-90815-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::223658774641:role/amplify-updown-dev-90815-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-updown-dev-90815-deployment",
+      "UnauthRoleName": "amplify-updown-dev-90815-unauthRole",
+      "StackName": "amplify-updown-dev-90815",
+      "StackId": "arn:aws:cloudformation:us-east-1:223658774641:stack/amplify-updown-dev-90815/cf2a0630-7d44-11ee-be32-0aca7f9c6e43",
+      "AmplifyAppId": "d3lox9f327pxzp"
+    },
+    "categories": {
+      "auth": {
+        "updown792036cf": {}
+      },
+      "api": {
+        "updown": {}
+      },
+      "function": {
+        "fetchBitcoinPrice": {
+          "bitcoinApiUrl": "https://api.coindesk.com/v1/bpi/currentprice/BTC.json",
+          "deploymentBucketName": "amplify-updown-dev-90815-deployment",
+          "s3Key": "amplify-builds/fetchBitcoinPrice-7661683070386f504a69-build.zip"
+        },
+        "resolveGuesses": {
+          "deploymentBucketName": "amplify-updown-dev-90815-deployment",
+          "s3Key": "amplify-builds/resolveGuesses-49662b53765647534573-build.zip"
+        },
+        "postSignupTrigger": {
+          "deploymentBucketName": "amplify-updown-dev-90815-deployment",
+          "s3Key": "amplify-builds/postSignupTrigger-4e7a6273637257375179-build.zip"
+        }
+      }
+    }
+  }
+}

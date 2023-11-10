@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "api": {
+      "updown": [
+        "Query",
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "bitcoinApiUrl",
+      "environmentVariableName": "BITCOIN_API_URL"
+    }
+  ]
+}
